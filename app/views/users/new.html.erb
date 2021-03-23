@@ -1,1 +1,14 @@
-<h1>TEST<h1>
+<h1>Create User<h1>
+
+<h1> Sign up here <h1>
+    <form action= "/users" method="get" accept-charset="UTF-8">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+        
+        <label for="username">Username:</label><br>
+        <input id="username" name="user[username]" type="text" /><br><br>
+        <label for="email">email:</label><br>
+        <input id="email" name="user[email]" type="text"/><br><br>
+        <label for="password">Password:</label><br>
+        <input id="password" name="user[password]" type="password" /><br><br>
+        <input name="submit" type="submit" value="Submit"/>
+    </form>
