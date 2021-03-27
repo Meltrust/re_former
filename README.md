@@ -54,6 +54,7 @@ rails server
 ```
 
 Open `http://localhost:3000/new` in your browser for a new record.
+
 Open `http://localhost:3000/[..]/edit` in your browser to edit a record, where [..] is the id of the record (eg: 1).
 
 
