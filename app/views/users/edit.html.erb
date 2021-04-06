@@ -21,7 +21,7 @@
     <%= submit_tag("Submit") %>
     <% end %>
     -->
-    <%= form_with model: @user do |form| %>
+    <%= form_with model: @user, local:true do |form| %>
       <%= label(:username, :Your_username_here!) %>
       <%= form.text_field :username %> <br>
       <br>
@@ -31,5 +31,15 @@
       <%= label(:password, :Your_password_here!) %>
       <%= form.password_field :password %> <br>
       <br>
-      <%= form.submit :Edit %>
+      <%= form.submit "Edit" %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     <% end %>
